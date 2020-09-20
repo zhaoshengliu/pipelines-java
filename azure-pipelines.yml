@@ -23,6 +23,8 @@ steps:
 jobs:
 - deployment:VMDeploy
   displayName:Java Web
+  pool:
+   vmImage:"windows"
   environment:
      name:javaonvm
      resourceType:VirtualMachine
