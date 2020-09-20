@@ -20,3 +20,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+jobs:
+- deployment:VMDeploy
+  displayName:Java Web
+  environment:
+     name:javaonvm
+     resourceType:VirtualMachine
+     tags:Web1
+  strategy:
+   runOnce:
+     deploy:
+       steps:
+        - script: echo my java deployement
+
